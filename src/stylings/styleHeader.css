@@ -1,0 +1,346 @@
+/* header style */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: center;
+    margin: auto;
+    gap: 1em;
+    box-shadow: 1px 1px 5px grey;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+}
+
+/* website logo and identity related styling */
+.websiteIdentity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+}
+
+#web-icon {
+    font-size: 1em;
+}
+
+#web-icon img {
+    width: 5em;
+    height: 1/5em;
+}
+
+/* search bar related styling */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid thin rgb(202, 201, 201);
+    border-radius: 0.2em;
+    margin: 0.5em 0;
+    padding: 0.1em 0.5em;
+}
+
+.search-bar i {
+    color: grey;
+}
+
+.search-bar input {
+    padding: 0.6em;
+    border-style: none;
+    font-size: 1em;
+    width: 15em;
+}
+
+.search-bar input:focus {
+    outline: none;
+}
+
+/* header icons styling */
+.header-icons {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 1em;
+    padding: 0;
+}
+
+.header-icons .navlinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    padding: 0.7em 0.5em;
+    transition: all 0.5s;
+    border: solid white;
+}
+
+.header-icons .navlinks:hover {
+    border-bottom: solid;
+}
+
+/* active link class */
+.header-icons .active {
+    border: solid white;
+    border-bottom: solid;
+    background-color: rgb(219, 215, 215, 0.8);
+    color: black;
+    padding: 0.7em 0.7em;
+    transition: all 0.5s;
+}
+
+/* hidden class for tooltip */
+.hidden {
+    display: none;
+}
+
+.tool,
+.tool2,
+.tool3,
+.tool4,
+.tool5 {
+    display: block;
+    position: absolute;
+    top: 8em;
+    background-color: white;
+    padding: 0.6em;
+    text-transform: uppercase;
+    font-size: 0.5em;
+    text-shadow: 1px 2px 10px grey;
+}
+
+.header-icons i {
+    font-size: 1.5em;
+}
+
+/* try button styling */
+.try-button {
+    padding: 0.5em;
+}
+
+.try-button button {
+    padding: 0.8em 1.8em;
+    border-style: none;
+    cursor: pointer;
+    border-radius: 1em;
+    transition: all 0.5s;
+}
+
+.try-button button:hover {
+    background-color: rgb(223, 74, 84);
+}
+
+/* profile icons styling */
+.profile-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 1em;
+    padding: 0.5em;
+}
+
+.profile-icons img {
+    width: 2em;
+}
+
+.profile-icons i {
+    font-size: 2em;
+}
+
+/* question button styling */
+.quest-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    padding: 0.5em;
+}
+
+.quest-button button {
+    border-style: none;
+    padding: 0.9em;
+    cursor: pointer;
+    color: white;
+    transition: all 0.5s;
+}
+
+#questBtn {
+    background-color: rgb(207, 7, 7);
+    border-radius: 0.5em 0 0 0.5em;
+}
+
+#questBtn:hover,
+#dropBtn:hover {
+    background-color: rgb(221, 221, 221);
+    color: black;
+}
+
+#dropBtn {
+    background-color: rgb(179, 7, 7);
+    border-radius: 0 0.5em 0.5em 0;
+}
+
+/* additional pages */
+
+.empty-page,
+.error-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    color: grey;
+    text-shadow: 0px 1px 10px rgb(145, 143, 143);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(135, 212, 248);
+}
+
+.empty-page span:first-child,
+.error-div span:first-child {
+    font-size: 10em;
+}
+
+.empty-page .head,
+.error-div .head {
+    font-size: 5em;
+    width: 100%;
+    text-align: center;
+}
+
+.empty-page p,
+.error-div p {
+    font-size: 2em;
+    letter-spacing: 0.07em;
+    width: 100%;
+    text-align: center;
+}
+
+/* responsive header */
+@media screen and (max-width: 700px) {
+    .header {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-areas:
+            "webID webID"
+            "headerIcon headerIcon"
+            "searchBar profIcon"
+            "tryBtn questBtn"
+        ;
+        padding: 0.1em 0.1em 0.5em 0.1em;
+        gap: 0.1em;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .websiteIdentity {
+        grid-area: webID;
+    }
+
+    .search-bar {
+        grid-area: searchBar;
+    }
+
+    .search-bar input {
+        font-size: 1em;
+        width: 11em;
+    }
+
+    .header-icons {
+        grid-area: headerIcon;
+    }
+
+    .try-button {
+        display: flex;
+        grid-area: tryBtn;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0.1em;
+    }
+    .try-button button{
+        width: 100%;
+        padding: 0.9em;
+        border-radius: 0.5em;
+    }
+
+    .profile-icons {
+        grid-area: profIcon;
+        justify-content: flex-end;
+        padding: 0;
+    }
+
+    .quest-button {
+        grid-area: questBtn;
+        justify-content: flex-end;
+        font-size: 0.8em;
+        padding: 0;
+    }
+
+    .empty-page,
+    .error-div {
+        margin-top: 10em;
+        font-size: 0.5em;
+    }
+}
+
+/* for tablets and little wider mobile devices */
+@media screen and (max-width: 1100px) and (min-width: 710px) {
+    .header {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-template-areas:
+            "webID headerIcon tryBtn profIcon"
+            "searchBar searchBar searchBar questBtn"
+        ;
+        padding: 0.2em;
+        gap: 0.2em;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .websiteIdentity {
+        grid-area: webID;
+    }
+
+    .search-bar {
+        grid-area: searchBar;
+        justify-content: flex-start;
+    }
+
+    .search-bar input {
+        font-size: 1em;
+        width: 10em;
+    }
+
+    .header-icons {
+        grid-area: headerIcon;
+    }
+
+    .try-button {
+        display: flex;
+        grid-area: tryBtn;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    .profile-icons {
+        grid-area: profIcon;
+        justify-content: flex-end;
+    }
+
+    .quest-button {
+        grid-area: questBtn;
+        justify-content: flex-end;
+    }
+
+    .empty-page,
+    .error-div {
+        font-size: 0.5em;
+    }
+}
